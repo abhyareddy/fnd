@@ -1,0 +1,12 @@
+pip install gradio
+
+import gradio as gr
+def detect(text):
+  return SVM.predict(text)
+  
+fnd = gr.Interface(
+    fn=detect,
+    inputs = gr.Textbox(label="Input",placeholder="Enter your text"),
+    outputs= gr.Textbox(label="Output"), title = "FAKE NEWS DETECTION"
+)
+fnd.launch()
